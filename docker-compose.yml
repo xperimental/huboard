@@ -1,0 +1,15 @@
+web:
+  build: .
+  links:
+   - memcache
+   - couchdb
+  ports:
+   - "5000:5000"
+memcache:
+  image: memcached
+couchdb:
+  image: tutum/couchdb
+  ports:
+   - "5984:5984"
+  environment:
+   - COUCHDB_PASS=admin
