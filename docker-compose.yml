@@ -3,6 +3,7 @@ web:
   links:
    - memcache
    - couchdb
+   - redis
   ports:
    - "5000:5000"
 memcache:
@@ -13,3 +14,7 @@ couchdb:
    - "5984:5984"
   environment:
    - COUCHDB_PASS=admin
+redis:
+  image: redis
+  ports:
+   - "6379:6379"
