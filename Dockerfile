@@ -23,6 +23,23 @@ RUN bundle install
 
 COPY . /usr/src/app
 
+ENV HUBOARD_ENV=oss
+
+ENV MEMCACHIER_SERVERS=memcache:11211
+
+ENV COUCH_DATABASE=huboard
+ENV COUCH_URL=http://couchdb:5984
+
+ENV REDIS_URL=redis://redis:6379
+
+ENV GITHUB_API_ENDPOINT=https://api.github.com/
+ENV GITHUB_WEB_ENDPOINT=https://github.com/
+
+ENV GITHUB_CLIENT_ID="set a client id"
+ENV GITHUB_SECRET="set a client secret"
+
+ENV SESSION_SECRET="set a session key"
+
 EXPOSE 5000
 
 CMD foreman start web
